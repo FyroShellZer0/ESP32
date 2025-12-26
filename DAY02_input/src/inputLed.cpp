@@ -4,22 +4,17 @@ bool On = false;
 void setup(){
   Serial.begin(115200);
   pinMode(2, OUTPUT);
-  // Wait for serial connection OR timeout after 10 seconds
-  unsigned long startTime = millis();
-  while(!Serial && (millis() - startTime < 10000)){
-    delay(10);
-  }
   Serial.println("Esp32 ready!, type something...");
 
 }
 void loop() {
   
-  if(Serial.available()){
-    //Serial.print("Enter: ");
+  if(Serial.available()){ 
+    Serial.print("Enter: ");
     String input = Serial.readStringUntil('\n');
     input.trim();
     
-    if(input.length() > 0){
+    if(input.length() > 0){ //string check
      Serial.print("you typed: ");
      Serial.println(input);
      if(input == "1"){
@@ -41,7 +36,5 @@ void loop() {
       Serial.println("Turning off");
       delay(1000);
       digitalWrite(2, LOW);
-    }
-  
-  
+    } 
 }
