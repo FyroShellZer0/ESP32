@@ -1,7 +1,9 @@
 --REQUIREMENTS--  
+-1 esp32  
 -3 LEDS(RED, YELLOW, GREEN)  
 -3 RESISTORS  
 -4 JUMPER WIRES  
+
 
 --------------------  
 1 JUMPER WIRE -> GND  
