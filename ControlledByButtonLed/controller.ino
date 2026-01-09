@@ -4,12 +4,12 @@
 bool state = false;
 void setup() {
   pinMode(led, OUTPUT);
-  pinMode(button, INPUT_PULLUP);
+  pinMode(button, INPUT_PULLUP); //button not pressed - HIGH
 }
 void loop () {
   if(digitalRead(button) == LOW) {
-    state = !state;
-    delay(300);
+    state = !state; //reverse
+    delay(300); //avoid noise
   }
-  digitalWrite(led, state? HIGH : LOW);
+  digitalWrite(led, state? HIGH : LOW); //ternary
 }
